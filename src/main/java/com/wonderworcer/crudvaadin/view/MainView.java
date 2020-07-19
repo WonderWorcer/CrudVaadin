@@ -1,4 +1,4 @@
-package com.wonderworcer.crudvaadin;
+package com.wonderworcer.crudvaadin.view;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -8,7 +8,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
+import com.wonderworcer.crudvaadin.repo.CustomerRepository;
 import com.wonderworcer.crudvaadin.model.Customer;
+import com.wonderworcer.crudvaadin.model.CustomerSex;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;

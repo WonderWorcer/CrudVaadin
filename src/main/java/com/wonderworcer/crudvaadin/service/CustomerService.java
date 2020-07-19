@@ -1,4 +1,4 @@
-package com.wonderworcer.crudvaadin;
+package com.wonderworcer.crudvaadin.service;
 
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;

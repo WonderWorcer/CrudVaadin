@@ -1,7 +1,5 @@
 package com.wonderworcer.crudvaadin.model;
 
-import com.wonderworcer.crudvaadin.CustomerSex;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

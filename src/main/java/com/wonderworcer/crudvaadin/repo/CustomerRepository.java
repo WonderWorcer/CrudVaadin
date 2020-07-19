@@ -1,4 +1,4 @@
-package com.wonderworcer.crudvaadin;
+package com.wonderworcer.crudvaadin.repo;
 
 import com.wonderworcer.crudvaadin.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,6 +2,8 @@ package com.wonderworcer.crudvaadin;
 
 
 import com.wonderworcer.crudvaadin.model.Customer;
+import com.wonderworcer.crudvaadin.model.CustomerSex;
+import com.wonderworcer.crudvaadin.repo.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

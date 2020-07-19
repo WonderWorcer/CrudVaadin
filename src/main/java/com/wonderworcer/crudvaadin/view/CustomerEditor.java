@@ -1,4 +1,4 @@
-package com.wonderworcer.crudvaadin;
+package com.wonderworcer.crudvaadin.view;
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyNotifier;
@@ -12,7 +12,9 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
+import com.wonderworcer.crudvaadin.repo.CustomerRepository;
 import com.wonderworcer.crudvaadin.model.Customer;
+import com.wonderworcer.crudvaadin.model.CustomerSex;
 import org.springframework.beans.factory.annotation.Autowired;
 
 

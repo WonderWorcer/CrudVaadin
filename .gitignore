@@ -1,9 +1,11 @@
-../NewsGenerator/.idea/
+.idea/
 .gradle/
 build/
 out/
+target/
 logs/
 *.iml
 .ipr
 classes/
-.idea_modules
+node_modules/
+/webpack.generated.js
