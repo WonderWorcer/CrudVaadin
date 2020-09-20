@@ -20,12 +20,12 @@ import java.time.LocalDate;
 public class MainView extends VerticalLayout {
 
     private final CustomerRepository repo;
-    private final CustomerEditor editor;
+    private final CustomerEditorLayout editor;
 
     private final Button addNewBtn;
     final Grid<Customer> grid;
 
-    public MainView(CustomerRepository repo, CustomerEditor editor) {
+    public MainView(CustomerRepository repo, CustomerEditorLayout editor) {
         this.repo = repo;
         this.editor = editor;
         this.grid = new Grid<>(Customer.class);

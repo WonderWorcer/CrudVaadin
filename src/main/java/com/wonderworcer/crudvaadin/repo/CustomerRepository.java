@@ -10,6 +10,5 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByNameStartsWithIgnoreCase(String name);
-
     Customer findById(long id);
 }

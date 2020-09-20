@@ -15,15 +15,21 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import com.wonderworcer.crudvaadin.repo.CustomerRepository;
 import com.wonderworcer.crudvaadin.model.Customer;
 import com.wonderworcer.crudvaadin.model.CustomerSex;
+import com.wonderworcer.crudvaadin.service.CustomerService;
+import com.wonderworcer.crudvaadin.service.CustomerServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
 @SpringComponent
 @UIScope
-public class CustomerEditor extends VerticalLayout implements KeyNotifier {
+public class CustomerEditorLayout extends VerticalLayout implements KeyNotifier {
 
     private final CustomerRepository repository;
 
+    @Autowired
+    private CustomerService customerService;
+    @Autowired
+    private CustomerServiceV2 customerServiceV2;
 
     private Customer customer;
     private TextField name = new TextField("name");
@@ -31,16 +37,16 @@ public class CustomerEditor extends VerticalLayout implements KeyNotifier {
     private DatePicker birthdate = new DatePicker("birthday");
 
     /* Action buttons */
-    Button save = new Button("Save", VaadinIcon.CHECK.create());
-    Button cancel = new Button("Cancel");
-    Button delete = new Button("Delete", VaadinIcon.TRASH.create());
-    HorizontalLayout actions = new HorizontalLayout(save, cancel, delete);
+    private Button save = new Button("Save", VaadinIcon.CHECK.create());
+    private Button cancel = new Button("Cancel");
+    private Button delete = new Button("Delete", VaadinIcon.TRASH.create());
+    private HorizontalLayout actions = new HorizontalLayout(save, cancel, delete);
 
-    Binder<Customer> binder = new Binder<>(Customer.class);
+    private Binder<Customer> binder = new Binder<>(Customer.class);
     private ChangeHandler changeHandler;
 
     @Autowired
-    public CustomerEditor(CustomerRepository repository) {
+    public CustomerEditorLayout(CustomerRepository repository) {
         this.repository = repository;
         add(name, sex, birthdate, actions);
         sex.setItems(CustomerSex.values());
@@ -58,12 +64,12 @@ public class CustomerEditor extends VerticalLayout implements KeyNotifier {
     }
 
     void delete() {
-        repository.delete(customer);
+        customerServiceV2.delete(customer);
         changeHandler.onChange();
     }
 
     void save() {
-        repository.save(customer);
+        customerServiceV2.save(customer);
         changeHandler.onChange();
     }
 
@@ -90,7 +96,7 @@ public class CustomerEditor extends VerticalLayout implements KeyNotifier {
         name.focus();
     }
 
-    public void setChangeHandler(ChangeHandler h) {
+   public void setChangeHandler(ChangeHandler h) {
         // ChangeHandler is notified when either save or delete
         // is clicked
         changeHandler = h;

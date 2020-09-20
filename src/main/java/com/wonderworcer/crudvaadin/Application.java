@@ -39,7 +39,7 @@ public class Application {
                 Customer c = new Customer();
                 c.setName(name);
                 c.setSex(CustomerSex.values()[r.nextInt(CustomerSex.values().length)]);
-                int daysOld = 0 - r.nextInt(365 * 15 + 365 * 60);
+                int daysOld = -r.nextInt(365 * 15 + 365 * 60);
                 c.setBirthDate(LocalDate.now().plusDays(daysOld));
                 repository.save(c);
             }
